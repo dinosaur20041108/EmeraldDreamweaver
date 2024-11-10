@@ -94,13 +94,13 @@ window.onload = () => {
         const noteElement = document.createElement('div');
         noteElement.className = 'note';
         noteElement.innerHTML = `
-            <img src="${escapeHtml(note.avatarURL)}" alt="${escapeHtml(note.username)}" width="80" height="80" />
-            <div class="note-info">
-                <span class="note-username">${escapeHtml(note.username)}</span>
-                <span class="note-date">${escapeHtml(note.date)}</span>
+            <span class="note-info">
+                <p><img src="${escapeHtml(note.avatarURL)}" alt="${escapeHtml(note.username)}" width="80" height="80" /></p>
+                <p class="note-username">${escapeHtml(note.username)}</p>
+                <p class="note-date">${escapeHtml(note.date)}</p>
                 <p class="note-title"><b>${escapeHtml(note.title)}</b></p>
                 <p class="note-text">${escapeHtml(note.text)}</p>
-            </div>
+            </span>
         `;
         fragment.appendChild(noteElement);
     }
