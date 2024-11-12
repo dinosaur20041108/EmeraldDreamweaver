@@ -1,14 +1,13 @@
 <template>
 <div class="monitor">
-    <iframe src="http://localhost:3000/" width="100%" height="1000px">
+    <iframe href="../build/index.html" width="100%" height="1000px"></iframe>
 
-    </iframe>
 </div>
 
 </template>
 
 <script setup>
-
+//<iframe src="http://localhost:3000/" width="100%" height="1000px"></iframe>
 </script>
 
 <style scoped>

@@ -33,7 +33,8 @@
     
     }
     const toMonitor=()=>{
-        router.push({path:'/monitor'})
+        //router.push({path:'/monitor'})
+        window.open("../src/build/index.html")
     }
     
     </script>
