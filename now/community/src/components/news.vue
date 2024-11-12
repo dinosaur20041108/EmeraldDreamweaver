@@ -70,7 +70,7 @@ const debounce = (fn, delay) => {
 		}, delay);
 	}
 };
-const cancalDebounce = debounce(getWindowInfo, 500);
+const cancalDebounce = debounce(getWindowInfo, 300);
 window.addEventListener('resize', cancalDebounce);
 
 
@@ -109,7 +109,7 @@ onMounted(()=>{
 }
 .data-container{
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     left: 5%;
     width: 90%;
     height: 20%;
@@ -131,12 +131,11 @@ onMounted(()=>{
     line-height: 80px;
     width: 70%;
     height: 55%;
+    right: 25%;
     display: flex;
     justify-content:end;
     align-items: end;
     font-weight: bold;
-    color:rgb(35, 0, 0);
-
     /* transform: translate(-32px,0); */
 }
 .unit{
@@ -145,11 +144,10 @@ onMounted(()=>{
     line-height: 30px;
     width: 30%;
     height: 55%;
-    left: 80%;
+    left: 88%;
     display: flex;
     /* justify-content: center; */
     align-items:end;
-    color:rgb(35, 0, 0);
     /* transform: translate(-32px,0); */
 }
 .topic{
@@ -161,7 +159,7 @@ onMounted(()=>{
     justify-content: center;
     align-items: center;
     font-size: 28px;
-    color:white;
+    color: white;
 }
 .title{
     position: absolute;

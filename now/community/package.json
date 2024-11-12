@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-legacy": "^5.4.3",
     "child_process": "^1.0.2",
     "element-plus": "^2.8.7",
     "module": "^1.2.5",

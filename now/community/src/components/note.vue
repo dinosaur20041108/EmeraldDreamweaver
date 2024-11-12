@@ -15,7 +15,7 @@
             <div class="ellipseText">{{ note.text }}</div>
         </div>
         <div class="button-container">
-            <div :class="currentLikeClass" class="like"></div>
+            <div class="like"></div>
             <div class="collect"></div>
             <div class="detail" @click="toDetail"></div>
         </div>
@@ -40,9 +40,6 @@ const toDetail=()=>{
     router.push({path:'/note',query:{index:`${props.index}`}})
 }
 
-const likeclick=()=>{
-
-}
 
 </script>
 
@@ -146,16 +143,6 @@ const likeclick=()=>{
 }
 .like{
     background-image: url("../static/like.png");
-    background-attachment: fixed;/*背景图片不会固定不会因页面滚动而重复*/
-    background-repeat: no-repeat;/*使图片不管任何大小都不会重复*/
-    background-size: contain;/*改变背景图的长和宽*/
-    background-position: center;
-    width: 20%;
-    height: 100%;
-    transform:rotate(0deg);
-}
-.likeclicked{
-    background-image: url("../static/like_onclick.png");
     background-attachment: fixed;/*背景图片不会固定不会因页面滚动而重复*/
     background-repeat: no-repeat;/*使图片不管任何大小都不会重复*/
     background-size: contain;/*改变背景图的长和宽*/
