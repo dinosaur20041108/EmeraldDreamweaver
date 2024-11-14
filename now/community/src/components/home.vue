@@ -1,20 +1,20 @@
 <template>
     <div class="home">
-        <div class=""></div>
+        
         <div class="index-container">
-            <div class="logo">
-                <el-image src="../src/static/whiteLogo.png" fit="contain" class="icon" />
-            </div>
-            <div class="title">Emerald Dreameaver</div>
-            <div class="button-box">
-                <div class="button" @click="toKnowledge">环保知识></div>
-                <div class="button" @click="toMonitor">环保模拟器></div>
-            </div>
+            <img src="../static/dinotree.jpg" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2">
+            <video src="../static/dinotree.mp4" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2"></video>
+            <div class="box">
+                <div class="logo">
+                    <el-image src="../src/static/whitelogo.png" fit="contain" class="icon" />
+                </div>
+                <div class="title">Emerald Dreameaver</div>
+                <div class="button-box">
+                    <div class="button" @click="toKnowledge">环保知识></div>
+                    <div class="button" @click="toMonitor">环保模拟器></div>
+                </div>
+            </div>    
         </div>
-        <div class="panda">
-            <el-image src="../src/static/panda.png" fit="contain" class="icon" />
-        </div>
-    
     
         <Rotation/>
     
@@ -41,30 +41,44 @@
     
     <style scoped>
     .icon{
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: 100%;
     }
-    
+    .box{
+        height: 50%;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0,0.1),rgba(0, 0, 0,0.25));
+        z-index: 5;
+        animation: anima 1500ms ease-out 100ms backwards; 
+    }
+    @keyframes anima {
+        0% {
+        opacity:0;
+        }
+        100% {
+        opacity:1;
+        }
+    }
+
     .home{
         width: 100%;
-        height: 200vh;
-        background: linear-gradient(#3A6C38,#819BAC);
+        height: 210vh;
+        background: linear-gradient(rgb(0, 0, 0),rgb(0,100,100),#819BAC);
         overflow: hidden;
     }
     .index-container{
         width: 100%;
-        height: 100vh;
-        background: url('../static/home.png');
+        height: 110vh;
+        /*background: url('../static/home.png');*/
         /* background-attachment: fixed; */
         background-repeat: no-repeat;
         background-size: cover;
-        mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 1) 35%);
+        mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 8%, rgba(0, 0, 0, 1) 30%);
         mask-mode: match-source;
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
     }
     
     .title{
@@ -72,18 +86,24 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        color: white;
+        color: whitesmoke;
         font-size: 70px;
-        line-height: 70px;
+        line-height: 80px;
+        font-weight: bold;
+        z-index: 5;
+        /*background:  linear-gradient(to right, #F6736B,#934F91)  ; /* 设置从左到右的线性渐变 */
+         /*-webkit-background-clip: text; /* 将背景裁剪到文字区域 */
+         /*-webkit-text-fill-color: transparent; /* 设置文字颜色为透明 */
     }
     .title::after{
         content: '';
         display: inline-block;
         width: 100%;
-        border-top: 4px solid white;
+        border-top: 5px solid white;
         transform: translate(0,-20px);
+        
     }
-    
+
     .button-box{
         width: 80%;
         height: 10%;
@@ -101,17 +121,14 @@
         text-align: center;
         color: white;
         font-size: 35px;
-        z-index: 5;
+        font-weight: bold;
+        cursor: pointer;
+        
+ 
     }
     
-    .panda{
-        position: absolute;
-        width: 20%;
-        right: 5vh;
-        bottom: 5vh;
-    }
     .logo{
-        width: 20%;
+        width: 30%;
         height: 30%;
         max-height: 200px;
         padding: auto;

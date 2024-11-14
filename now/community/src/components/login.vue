@@ -1,5 +1,7 @@
 <template>
-	<div class="Sign">
+	<div class="Sign" >
+		<img src="../static/cloud.jpg" style="width: 100%;height: 100vh;object-fit: cover;position: absolute;top: 0;left: 0;"  z-index="-2">
+		<video src="../static/Clouds.mp4" style="width: 100%;height: 100%;object-fit: cover;position: absolute;top: 0;left: 0;" autoplay="autoplay" loop="loop" muted="muted"></video>
 		<h1>Sign in/ Sign up</h1>
 		<div class="log">
 			<div :class="dinolayout">
@@ -39,7 +41,7 @@
 	.Sign {
 		width: 100%;
 		height: 100%;
-		background-image: '../static/img/background.jpg';
+		background-image: "../static/cloud.jpg";
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		display: flex;
@@ -52,6 +54,7 @@
 		margin-top: 50px;
 		font-size: 30px;
 		color: black;
+		z-index: 5;
 	}
  
 	.log {
@@ -68,6 +71,7 @@
 		margin-top: 10px;
 		display: flex;
 		background: -webkit-linear-gradient(right, #4284db, #27e0bb);
+		z-index:1;
 	}
  
 	.dinolayout {
@@ -251,4 +255,118 @@
 			}
 		}
 	}
+/* window.onload = function () {
+    // 初始化函数
+    function init() {
+        // 设置div背景的宽高
+        var background = document.getElementById("background");
+        background.style.width = window.innerWidth + 'px';
+        background.style.height = window.innerHeight + 'px';
+
+        // canvas
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        return { canvas, ctx };
+    }
+
+    // 获取初始化后的 canvas 和 ctx
+    const { canvas, ctx } = init();
+
+    // 定义一个粒子数组
+    let particlesArray = [];
+    // 定义页面内粒子的数量
+    const count = 100;
+
+    // 定义粒子类
+    class Particle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            // x，y轴的移动速度  -0.5 -- 0.5
+            this.directionX = Math.random() - 0.5;
+            this.directionY = Math.random() - 0.5;
+        }
+
+        // 更新点的坐标
+        update() {
+            this.x += this.directionX;
+            this.y += this.directionY;
+        }
+
+        // 绘制粒子
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = "white";
+            ctx.fill();
+        }
+    }
+
+    // 创建粒子
+    function createParticle() {
+        // 生成一个点的随机坐标
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+
+        particlesArray.push(new Particle(x, y));
+    }
+
+    // 处理粒子
+    function handleParticle() {
+        particlesArray = particlesArray.filter(particle => {
+            particle.update();
+            particle.draw();
+
+            // 超出范围就将这个粒子删除
+            if (particle.x < 0 || particle.x > canvas.width || particle.y < 0 || particle.y > canvas.height) {
+                return false;
+            }
+
+            // 绘制两个点之间的连线
+            for (let j = 0; j < particlesArray.length; j++) {
+                if (j === particlesArray.indexOf(particle)) continue;
+
+                const dx = particlesArray[j].x - particle.x;
+                const dy = particlesArray[j].y - particle.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 100) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+                    ctx.moveTo(particle.x, particle.y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    ctx.closePath();
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+
+            return true;
+        });
+    }
+
+    // 绘制函数
+    function draw() {
+        // 首先清空画布
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 如果粒子数量小于规定数量，就生成新的粒子
+        while (particlesArray.length < count) {
+            createParticle();
+        }
+
+        // 处理粒子
+        handleParticle();
+
+        // 请求下一帧
+        requestAnimationFrame(draw);
+    }
+
+    // 启动绘制
+    draw();
+} */
 </script>

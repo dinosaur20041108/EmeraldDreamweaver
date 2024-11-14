@@ -6,7 +6,6 @@ import DataVisualization from "./DataVisualization";
 import FooterData from "./footer";
 
 import "./App.css";
-import Baidumap from "./baidumap";
 
 
 function App() {

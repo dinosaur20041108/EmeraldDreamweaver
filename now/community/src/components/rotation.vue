@@ -26,7 +26,7 @@ import News from '@/components/news.vue'
     height: 80vh;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 10vh;
+    margin-top: 5vh;
     /* background: linear-gradient(rgb(27,113,2,0.8),rgb(255,255,255,1)); */
     transform: translate(0,-80px);
 }

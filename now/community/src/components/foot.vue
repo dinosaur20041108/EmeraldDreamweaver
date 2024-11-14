@@ -118,6 +118,11 @@
 .sub{
     font-size: 18px;
     font-weight: bold;
+    line-height: 30px;
+    cursor: pointer;
+}
+.sub:hover{
+    scale: 1.1;
 }
 .mid{
     width: 33%;
