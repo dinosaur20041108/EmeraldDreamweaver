@@ -2,8 +2,8 @@
     <div class="home">
         
         <div class="index-container">
-            <img src="../static/dinotree.jpg" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2">
-            <video src="../static/dinotree.mp4" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2"></video>
+            <img src="../static/park.jpg" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2">
+            <video src="../static/park.mp4" style="width: 100%;height: 110vh;object-fit: cover;position: absolute;top: -10vh;left: 0;" autoplay="autoplay" loop="loop" muted="muted" z-index="-2"></video>
             <div class="box">
                 <div class="logo">
                     <el-image src="../src/static/whitelogo.png" fit="contain" class="icon" />
@@ -47,7 +47,6 @@
     .box{
         height: 50%;
         width: 100%;
-        background: linear-gradient(rgba(0, 0, 0,0.1),rgba(0, 0, 0,0.25));
         z-index: 5;
         animation: anima 1500ms ease-out 100ms backwards; 
     }
