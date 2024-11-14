@@ -76,35 +76,3 @@ const notes = [{
 }]
 
 export default notes
-
-// const noteContainer = document.getElementById('note-container');
-
-// //防止 XSS 攻击。
-// function escapeHtml(unsafe) {
-//     return unsafe
-//         .replace(/&/g, "&amp;")
-//         .replace(/</g, "&lt;")
-//         .replace(/>/g, "&gt;")
-//         .replace(/"/g, "&quot;")
-//         .replace(/'/g, "&#039;");
-// }
-
-// window.onload = () => {
-//     const fragment = document.createDocumentFragment();
-//     for (let i = 0; i < notes.length; i++) {
-//         const note = notes[i];
-//         const noteElement = document.createElement('div');
-//         noteElement.className = 'note';
-//         noteElement.innerHTML = `
-//             <img src="${escapeHtml(note.avatarURL)}" alt="${escapeHtml(note.username)}" width="80" height="80" />
-//             <div class="note-info">
-//                 <span class="note-username">${escapeHtml(note.username)}</span>
-//                 <span class="note-date">${escapeHtml(note.date)}</span>
-//                 <p class="note-title"><b>${escapeHtml(note.title)}</b></p>
-//                 <p class="note-text">${escapeHtml(note.text)}</p>
-//             </div>
-//         `;
-//         fragment.appendChild(noteElement);
-//     }
-//     noteContainer.appendChild(fragment);
-// }
