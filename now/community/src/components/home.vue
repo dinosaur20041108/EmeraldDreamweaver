@@ -36,7 +36,8 @@
     }
     const toMonitor=()=>{
         //router.push({path:'/monitor'})
-        window.open("../src/build/index.html")
+        //window.open("../src/build/index.html")
+        window.open("http://localhost:3000")
     }
     
     </script>

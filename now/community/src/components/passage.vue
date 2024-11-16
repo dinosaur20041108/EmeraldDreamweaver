@@ -89,7 +89,7 @@ const toLink=()=>{
     height: 80%;
     border: black solid 1px;
     border-radius: 30px;
-    background-color: rgb(255,255,255,0.4);
+    background-color: rgb(255,255,255,0.6);
     position: relative;
     z-index: 1;
 }
