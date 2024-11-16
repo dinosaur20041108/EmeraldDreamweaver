@@ -94,6 +94,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		z-index: 5;
 	}
  
 	.dinolayoutright {
@@ -106,6 +107,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		z-index: 5;
 	}
  
 	.dinolaytitle {
@@ -211,7 +213,6 @@
 	h3{
 		font-size: 10px;
 		margin-top: 10px;
-		cursor: pointer;
 	}
 	.inupbutton{
 		background-color: #29eac4;
@@ -224,6 +225,10 @@
 		text-align: center;
 		line-height: 40px;
 		margin-top: 30px;
+	}
+	.inupbutton:hover , .buttongohs:hover{
+		scale: 1.1;
+		cursor: pointer;
 	}
 </style>
  

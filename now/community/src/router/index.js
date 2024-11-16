@@ -10,6 +10,7 @@ import Community from '@/components/community.vue'
 import Note from '@/components/noteDetail.vue'
 import Monitor from '@/components/monitor.vue'
 import Me from '@/components/me.vue'
+import Knowledge from '@/components/knowledge.vue'
 
 //第二步 : 创建路由器
 const router = createRouter({
@@ -38,6 +39,10 @@ const router = createRouter({
         {
             path:'/me',
             component:Me
+        },
+        {
+            path:'/knowledge',
+            component:Knowledge
         }
     ]
 })

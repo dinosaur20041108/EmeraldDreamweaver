@@ -8,7 +8,7 @@
                 <div class="logo">
                     <el-image src="../src/static/whitelogo.png" fit="contain" class="icon" />
                 </div>
-                <div class="title">Emerald Dreameaver</div>
+                <div class="title">Emerald&ensp;Dreameaver</div>
                 <div class="button-box">
                     <div class="button" @click="toKnowledge">环保知识></div>
                     <div class="button" @click="toMonitor">环保模拟器></div>
@@ -30,7 +30,9 @@
     
     
     const toKnowledge=()=>{
-    
+        router.push({
+            path:'/knowledge'
+        })
     }
     const toMonitor=()=>{
         //router.push({path:'/monitor'})
@@ -40,6 +42,7 @@
     </script>
     
     <style scoped>
+
     .icon{
         width: 100%;
         height: 100%;
@@ -48,7 +51,7 @@
         height: 50%;
         width: 100%;
         z-index: 5;
-        animation: anima 1500ms ease-out 100ms backwards; 
+        animation: anima 1000ms ease-out 100ms backwards; 
     }
     @keyframes anima {
         0% {
@@ -62,7 +65,7 @@
     .home{
         width: 100%;
         height: 210vh;
-        background: linear-gradient(rgb(0, 0, 0),rgb(0,100,100),#819BAC);
+        background: linear-gradient(rgb(0, 0, 0),rgb(0, 120, 44),#819BAC);
         overflow: hidden;
     }
     .index-container{
@@ -87,8 +90,8 @@
         text-align: center;
         color: whitesmoke;
         font-size: 70px;
+        font-family: "Carattere";
         line-height: 80px;
-        font-weight: bold;
         z-index: 5;
         /*background:  linear-gradient(to right, #F6736B,#934F91)  ; /* 设置从左到右的线性渐变 */
          /*-webkit-background-clip: text; /* 将背景裁剪到文字区域 */
@@ -122,8 +125,9 @@
         font-size: 35px;
         font-weight: bold;
         cursor: pointer;
-        
- 
+    }
+    .button:hover{
+        scale: 1.1;
     }
     
     .logo{
@@ -134,6 +138,20 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+    @font-face {
+        font-family: 'Carattere';
+        src: url('../static/font/Carattere-Regular.ttf') format('truetype');
+    }
+    @media screen and (max-width: 850px) {
+        .title{
+            font-size: 40px;
+            line-height: 50px;
+        }
+        .button{
+            font-size: 25px;
+        }
+        
     }
     
     </style>

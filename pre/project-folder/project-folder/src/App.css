@@ -1,0 +1,242 @@
+.app-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "data-visualization map-display map-display "
+    "footer footer footer";
+  grid-template-columns: 0.5fr 2.4fr 0.5fr;
+  grid-template-rows: auto 1fr auto;
+  height: 50vh;
+  background-color: #f0f4f7;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 40px; 
+  background-color: #2c3e50; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-bottom: 3px solid #2980b9;  
+}
+
+.title {
+  font-size: 2rem; 
+  font-weight: 700;
+  color: #ecf0f1;  
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+}
+
+.year-display {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+}
+
+.year-display h2 {
+  font-size: 1.5rem;
+  color: #ecf0f1;  /* 浅灰色字体，和主标题一致 */
+  font-weight: 400;
+}
+
+.year-display h2::before {
+  content: "Year: ";  /* 增加'Year:' 前缀 */
+  font-weight: 600;
+  color: #3498db;  /* 蓝色前缀，与边框相呼应 */
+}
+
+
+
+.data-visualization {
+  grid-area: data-visualization;
+  display: grid;
+  grid-template-rows: auto;
+  background-color: #406e91;
+  color: #f0f0f0;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3),
+    -10px -10px 30px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.data-visualization:hover {
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.4),
+    -15px -15px 40px rgba(255, 255, 255, 0.15);
+}
+
+
+
+/* .data-visualization-chart {
+  background-color: #406e91;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 0.9rem;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+ */
+
+
+.map-display {
+  z-index: 0;
+  grid-area: map-display;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+
+.controls-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: rgba(50, 50, 50, 0.7);
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.controls-panel:hover {
+  background-color: rgba(50, 50, 50, 0.9);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.control-panel button:hover {
+  background-color: #45a049;
+}
+
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+.control-group input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
+  appearance: none;
+  height: 6px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-group input[type="range"]:hover {
+  background: #ccc;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb:hover {
+  background: #45a049;
+}
+
+
+
+.footer-info {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3a4856;
+  color: white;
+  padding: 20px;
+}
+
+
+.ocean-level,
+.temperature {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.ocean-level.low {
+  background: linear-gradient(135deg, #005f8a, #003f5c);  /* 深海蓝渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.3);
+}
+
+.temperature.low {
+  background: linear-gradient(135deg, #005f8a, #003f5c);  /* 深海蓝渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 255, 0.3);
+}
+
+.ocean-level.medium {
+  background: linear-gradient(135deg, #e04b4b, #c0392b);  /* 暗红色渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(255, 69, 0, 0.3);
+}
+
+.temperature.medium {
+  background: linear-gradient(135deg, #e04b4b, #c0392b);  /* 暗红色渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(255, 69, 0, 0.3);
+}
+
+.ocean-level.high {
+  background: linear-gradient(135deg, #d23636, #8e0000);  /* 深红色渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.5);
+}
+
+.temperature.high {
+  background: linear-gradient(135deg, #d23636, #8e0000);  /* 深红色渐变 */
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(255, 0, 0, 0.5);
+}
+
+/* Pulsing animation for emphasis */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.ocean-level, .temperature {
+    animation: pulse 3s ease-in-out infinite;
+}

@@ -42,6 +42,7 @@ const toMe=()=>{
     justify-content: center;
     align-items: center;
     background-color: rgb(255,255,255,0.75);
+    overflow: hidden;
     z-index: 2;
 }
 .logo{

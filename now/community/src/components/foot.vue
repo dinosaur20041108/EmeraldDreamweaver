@@ -5,7 +5,7 @@
     <div class="footer">
         <div class="left">
             <div class="center">
-                <div class="title">Emerald  Dreamweaver</div>
+                <div class="title">Emerald Dreamweaver</div>
                 <div class="sub-title">
                     <div class="sub-block-half">
                         <div class="sub"><br></div>
@@ -38,7 +38,7 @@
         <div class="right">
         <img src="..\static\QR.png" class="QR">
         <div class="text">扫一扫，关注绿意织梦</div>
-        <div class="text">copyright © 2024 Emerald  Dreamweaver</div>
+        <div class="text">copyright © 2024 Emerald Dreamweaver</div>
 
         </div>
     </div>
@@ -151,23 +151,30 @@
     flex-direction: column;
 }
 .QR{
-    max-width: 40%;
+    width: 40%;
+
 }
 
-@media screen and (max-width: 1200px) {
-    .mid{
-        display: none;
+@media screen and (max-width: 1100px) {
+    .title{
+        font-size: 20px;
+    }
+    .sub{
+        font-size: 14px;
     }
     .protect{
         font-size: 30px;
     }
+    .text{
+        font-size: small;
+    }
 }
-@media screen and (max-width: 600px) {
-    .right{
+@media screen and (max-width: 900px) {
+    .text{
         display: none;
     }
-    .left{
-        width: 100%;
+    .mid{
+        display: none;
     }
 }
 </style>

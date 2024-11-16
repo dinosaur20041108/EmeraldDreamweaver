@@ -15,13 +15,17 @@
             <div class="ellipseText">{{ note.text }}</div>
         </div>
         <div class="button-container">
-            <div class="like"></div>
-            <div class="collect"></div>
+            <div class="like">
+                <img :src="isLike?likedURL:likeURL" alt="qwq" class="icon" @click="isLike=~isLike"/>
+            </div>
+            <div class="collect">
+                <img :src="isCollect?collectedURL:collectURL" alt="qwq" class="icon" @click="isCollect=~isCollect" />
+            </div>
             <div class="detail" @click="toDetail"></div>
         </div>
     </div>
 </template>
-
+<img :src="likeURL" alt="qwq" class="icon"/>
 <script setup>
 import {ref,defineProps} from 'vue'
 import notes from '@/static/ldd.js'
@@ -39,6 +43,16 @@ const router=useRouter()
 const toDetail=()=>{
     router.push({path:'/note',query:{index:`${props.index}`}})
 }
+
+const isLike=ref(false)
+const isCollect=ref(false)
+
+const likedURL='../src/static/like-clicked.png'
+const likeURL='../src/static/like.png'
+const collectedURL='../src/static/collect-clicked.png'
+const collectURL='../src/static/collect.png'
+
+
 
 
 </script>
@@ -142,30 +156,28 @@ const toDetail=()=>{
     justify-content:space-between;
 }
 .like{
-    background-image: url("../static/like.png");
     background-attachment: fixed;/*背景图片不会固定不会因页面滚动而重复*/
     background-repeat: no-repeat;/*使图片不管任何大小都不会重复*/
-    background-size: contain;/*改变背景图的长和宽*/
+    background-size: cover;
     background-position: center;
-    width: 20%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     transform:rotate(0deg);
+    transform: translatey(2px);
 }
-.like:hover{
-    scale: 1.2;
-}
+
 .collect{
-    background-image: url("../static/collect.png");
     background-attachment: fixed;/*背景图片不会固定不会因页面滚动而重复*/
     background-repeat: no-repeat;/*使图片不管任何大小都不会重复*/
-    background-size: contain;/*改变背景图的长和宽*/
+    background-size: cover;
     background-position: center;
-    width: 10%;
-    height: 30%;
+    width: 25px;
+    height: 25px;
     transform:rotate(0deg);
 }
-.collect:hover{
+.like:hover,.collect:hover{
     scale: 1.2;
+    cursor: pointer;
 }
 .detail{
     background-image: url("../static/detail.png");
@@ -180,6 +192,7 @@ const toDetail=()=>{
 }
 .detail:hover{
     scale: 1.1;
+    cursor: pointer;
 }
 
 .ellipseTitle{
